@@ -18,12 +18,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Assignment 1</h1>
-        <form>
-          <label>Username: </label>
-          <UserInput change={this.changeUsername} />
-        </form>
-        <UserOutput name={this.state.username} />
+        <h1 style={{fontStyle: "italic"}}>Assignment 1</h1>
+        <UserInput 
+          name={this.state.username}
+          change={this.changeUsername} 
+        />
         <UserOutput name={this.state.username} />
         <UserOutput name={this.state.username} />
       </div>

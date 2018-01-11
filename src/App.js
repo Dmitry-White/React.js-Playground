@@ -5,14 +5,21 @@ import UserOutput from './UserOutput/UserOutput';
 
 class App extends Component {
   state = {
-    
+    username: "John",
   };
+
+  changeUsername = () => {
+    console.log("Clicked")
+    this.setState({
+      username: "Michael"
+    });
+  }
 
   render() {
     return (
-      <div className="App">
+      <div className="App"onClick={this.changeUsername}>
         <UserInput />
-        <UserOutput name="Mike" />
+        <UserOutput name={this.state.username} />
         <UserOutput name="Jane" />
         <UserOutput name="Jessie" />
       </div>

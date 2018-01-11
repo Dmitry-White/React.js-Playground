@@ -8,20 +8,24 @@ class App extends Component {
     username: "John",
   };
 
-  changeUsername = () => {
-    console.log("Clicked")
+  changeUsername = (event) => {
+    console.log("Change")
     this.setState({
-      username: "Michael"
+      username: event.target.value
     });
   }
 
   render() {
     return (
-      <div className="App"onClick={this.changeUsername}>
-        <UserInput />
+      <div className="App">
+        <h1>Assignment 1</h1>
+        <form>
+          <label>Username: </label>
+          <UserInput change={this.changeUsername} />
+        </form>
         <UserOutput name={this.state.username} />
-        <UserOutput name="Jane" />
-        <UserOutput name="Jessie" />
+        <UserOutput name={this.state.username} />
+        <UserOutput name={this.state.username} />
       </div>
     );
   };

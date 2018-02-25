@@ -50,7 +50,7 @@ class Posts extends Component {
 
         return (
             <section className={classes.Posts}>
-                {posts}
+                {page}
             </section>
         )
     };

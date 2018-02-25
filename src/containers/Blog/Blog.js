@@ -13,13 +13,19 @@ class Blog extends Component {
                 <header>
                     <nav>
                         <ul>
-                            <li><NavLink
-                                to="/"
-                                exact
-                                activeClassName={classes.active} >Home</NavLink></li>
-                            <li><NavLink 
-                                to="/new-post" 
-                                activeClassName={classes.active}>New Post</NavLink></li>
+                            <li>
+                                <NavLink
+                                    to="/"
+                                    exact
+                                    activeClassName={classes.active}
+                                >Home</NavLink>
+                            </li>
+                            <li>
+                                <NavLink 
+                                    to="/new-post" 
+                                    activeClassName={classes.active}
+                                >New Post</NavLink>
+                            </li>
                         </ul>
                     </nav>
                 </header>

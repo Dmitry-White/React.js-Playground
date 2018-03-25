@@ -1,5 +1,5 @@
 ## Demo on Firebase
-[https://react-white-burger.firebaseapp.com/](#Yummy Burger)
+[Yummy Burger](https://react-white-burger.firebaseapp.com/)
 
 ## Table of Contents
 

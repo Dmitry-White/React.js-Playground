@@ -1,6 +1,3 @@
-## Demo on Firebase
-[Yummy Burger](https://react-white-burger.firebaseapp.com/)
-
 ## Table of Contents
 
 - [Folder Structure](#folder-structure)

@@ -7,10 +7,8 @@ import query from '../queries/fetchSongs';
 
 class SongList extends Component {
     onSongDelete(id) {
-        this.props.mutate({
-            variables: {id},
-            refetchQueries: [{query}]
-        })
+        this.props.mutate({variables: {id}})
+            .then(() => this.props.data.refetch());
     };
 
     renderSongs() {
@@ -19,7 +17,7 @@ class SongList extends Component {
                 <li key={id} className="collection-item">
                     {title}
                     <i
-                        className="secondary-content material-icons"
+                        className="material-icons"
                         style={{cursor: "pointer"}}
                         onClick={() => this.onSongDelete(id)}
                     >delete</i>

@@ -19,5 +19,5 @@ class SongDetail extends Component {
 };
 
 export default graphql(fetchSong, {
-    options: (props) => ({variables: {id: props.params.id}})
+    options: (props) => ({ variables: {id: props.params.id} })
 })(SongDetail);

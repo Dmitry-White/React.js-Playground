@@ -6,9 +6,9 @@ import { Router, Route, hashHistory, IndexRoute } from 'react-router';
 
 import './style/style.css';
 import App from './components/App';
-import SongList from './components/SongList';
-import SongCreate from './components/SongCreate';
-import SongDetail from './components/SongDetail';
+import SongList from './components/Song/SongList';
+import SongCreate from './components/Song/SongCreate';
+import SongDetail from './components/Song/SongDetail';
 
 const client = new ApolloClient({});
 

@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { graphql } from 'react-apollo';
 import { Link } from 'react-router';
 
-import fetchSong from '../queries/fetchSong';
+import fetchSong from '../../queries/fetchSong';
 
-import LyricList from './LyricList';
-import LyricCreate from './LyricCreate';
+import LyricList from '../Lyric/LyricList';
+import LyricCreate from '../Lyric/LyricCreate';
 
 class SongDetail extends Component {
     render() {

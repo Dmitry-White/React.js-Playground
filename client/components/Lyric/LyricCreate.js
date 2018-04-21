@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { graphql } from 'react-apollo';
 
-import addLyric from '../mutations/addLyric';
+import addLyric from '../../mutations/addLyric';
 
 class LyricCreate extends Component {
     constructor(props) {

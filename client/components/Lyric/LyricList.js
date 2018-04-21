@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { graphql } from 'react-apollo';
 import { Link } from 'react-router';
 
-import fetchSongs from '../queries/fetchSongs';
-import deleteSong from '../mutations/deleteSong';
+import fetchSongs from '../../queries/fetchSongs';
+import deleteSong from '../../mutations/deleteSong';
 
 class LyricList extends Component {
     onLyricLike() {

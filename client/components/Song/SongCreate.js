@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { graphql } from 'react-apollo';
 import { Link, hashHistory } from 'react-router';
 
-import query from '../queries/fetchSongs';
-import addSong from '../mutations/addSong';
+import query from '../../queries/fetchSongs';
+import addSong from '../../mutations/addSong';
 
 class SongCreate extends Component {
     constructor(props) {

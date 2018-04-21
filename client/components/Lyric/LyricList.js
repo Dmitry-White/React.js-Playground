@@ -5,8 +5,18 @@ import { Link } from 'react-router';
 import likeLyric from '../../mutations/likeLyric';
 
 class LyricList extends Component {
-    onLyricLike(id) {
-        this.props.mutate({ variables: {id} });
+    onLyricLike(id, likes) {
+        this.props.mutate({
+            variables: { id },
+            optimisticResponse: {
+                __typename: 'Mutations',
+                likeLyric: {
+                    id: id,
+                    __typename: 'LyricType',
+                    likes: likes + 1
+                }
+            }
+        });
     };
 
     renderLyrics() {
@@ -17,7 +27,7 @@ class LyricList extends Component {
                     <div className="vote-box">
                         <i
                             className="material-icons"
-                            onClick={() => this.onLyricLike(id)}
+                            onClick={() => this.onLyricLike(id, likes)}
                         >thumb_up</i>
                         {likes}
                     </div>

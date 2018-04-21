@@ -6,7 +6,7 @@ import fetchSongs from '../../queries/fetchSongs';
 import deleteSong from '../../mutations/deleteSong';
 
 class LyricList extends Component {
-    onLyricLike() {
+    onLyricLike(id) {
         console.log("Liked!");
     };
 
@@ -18,7 +18,7 @@ class LyricList extends Component {
                     <i
                         className="material-icons"
                         style={{cursor: "pointer"}}
-                        onClick={() => this.onLyricDelete()}
+                        onClick={() => this.onLyricLike(id)}
                     >thumb_up</i>
                 </li>
             );

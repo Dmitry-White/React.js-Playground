@@ -9,8 +9,15 @@ class LyricCreate extends Component {
         this.state = {content: ''};
     };
 
-    onSubmit() {
+    onSubmit(event) {
         event.preventDefault();
+        this.props.mutate({
+            variables: {
+                content: this.state.content,
+                songId: this.props.songId
+            }
+        });
+        this.setState({ content: ""});
     };
 
     render() {
@@ -20,7 +27,7 @@ class LyricCreate extends Component {
                 <input
                     value={this.state.content}
                     onChange={event => {
-                        thist.setState({content: event.target.value})
+                        this.setState({content: event.target.value})
                     }}/>
             </form>
         );

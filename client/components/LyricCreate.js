@@ -1,14 +1,21 @@
 import React, { Component } from 'react';
+import { graphql } from 'react-apollo';
+
+import addLyric from '../mutations/addLyric';
 
 class LyricCreate extends Component {
-    constructor() {
+    constructor(props) {
         super(props);
         this.state = {content: ''};
     };
 
+    onSubmit() {
+        event.preventDefault();
+    };
+
     render() {
         return (
-            <form>
+            <form onSubmit={this.onSubmit.bind(this)}>
                 <label>Add a Lyric</label>
                 <input
                     value={this.state.content}
@@ -20,4 +27,4 @@ class LyricCreate extends Component {
     };
 };
 
-export default LyricCreate;
+export default graphql(addLyric)(LyricCreate);

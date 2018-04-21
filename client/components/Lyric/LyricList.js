@@ -11,20 +11,10 @@ class LyricList extends Component {
     };
 
     renderLyrics() {
-        return (
-            <li className="collection-item">
-                Lyrics
-                <i
-                    className="material-icons"
-                    style={{cursor: "pointer"}}
-                    onClick={() => this.onLyricDelete()}
-                >thumb_up</i>
-            </li>
-        )
-        /*return this.props.data.songs.map(({id, title}) => {
+        return this.props.lyrics.map(({id, content}) => {
             return (
                 <li key={id} className="collection-item">
-                    {title}
+                    {content}
                     <i
                         className="material-icons"
                         style={{cursor: "pointer"}}
@@ -32,13 +22,10 @@ class LyricList extends Component {
                     >thumb_up</i>
                 </li>
             );
-        });*/
+        });
     };
 
     render() {
-        /*if (this.props.data.loading) {
-            return <div className="loader">Loading...</div>;
-        };*/
         return (
             <div>
                 <ul className="collection">

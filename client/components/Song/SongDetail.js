@@ -12,11 +12,12 @@ class SongDetail extends Component {
         if (this.props.data.loading) {
             return <div className="loader">Loading...</div>;
         };
+        const song = this.props.data.song;
         return (
             <div>
                 <Link to="/">Back</Link>
-                <h3>{this.props.data.song.title}</h3>
-                <LyricList />
+                <h3>{song.title}</h3>
+                <LyricList lyrics={song.lyrics}/>
                 <LyricCreate songId={this.props.params.id}/>
             </div>
         );

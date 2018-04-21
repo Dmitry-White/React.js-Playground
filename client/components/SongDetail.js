@@ -9,7 +9,7 @@ import LyricCreate from './LyricCreate';
 class SongDetail extends Component {
     render() {
         if (this.props.data.loading) {
-            return <div>Loading...</div>;
+            return <div className="loader">Loading...</div>;
         };
         return (
             <div>

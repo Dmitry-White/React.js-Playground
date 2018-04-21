@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 import { Link } from 'react-router';
 
-import query from '../queries/fetchSongs';
+import fetchSongs from '../queries/fetchSongs';
+import deleteSong from '../mutations/deleteSong';
 
 class SongList extends Component {
     onSongDelete(id) {
@@ -28,7 +28,7 @@ class SongList extends Component {
 
     render() {
         if (this.props.data.loading) {
-            return <div>Loading...</div>;
+            return <div className="loader">Loading...</div>;
         };
         return (
             <div>
@@ -46,14 +46,6 @@ class SongList extends Component {
     };
 };
 
-const mutation = gql`
-    mutation DeleteSong($id: ID){
-        deleteSong(id: $id) {
-            id
-        }
-    }
-`;
-
-export default graphql(mutation)(
-    graphql(query)(SongList)
+export default graphql(deleteSong)(
+    graphql(fetchSongs)(SongList)
 );

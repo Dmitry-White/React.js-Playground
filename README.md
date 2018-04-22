@@ -1,2 +1,2 @@
-# Lyrical-GraphQL
-Starter project from a GraphQL course
+# AuthApp-GraphQL
+Auth-included project from a GraphQL course

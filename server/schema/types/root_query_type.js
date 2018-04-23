@@ -5,14 +5,11 @@ const UserType = require('./user_type');
 
 const RootQueryType = new GraphQLObjectType({
     name: 'RootQueryType',
-    fields: () => ({
+    fields: {
         user: {
-            type: UserType,
-            resolve() {
-                return null
-            }
+            type: UserType
         }
-    })
+    }
 });
 
 module.exports = RootQueryType;

@@ -1,4 +1,4 @@
-import gql from 'graphql-gql';
+import gql from 'graphql-tag';
 
 export default gql`
     mutation {

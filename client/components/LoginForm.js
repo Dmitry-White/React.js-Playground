@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { graphql } from 'react-apollo';
-import hashHistory from 'react-router';
+import { hashHistory } from 'react-router';
 
 import Login from '../mutations/Login';
 import AuthForm from './AuthForm';

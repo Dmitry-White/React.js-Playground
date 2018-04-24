@@ -41,16 +41,16 @@ class Header extends Component {
 
     render() {
         return (
-            <header>
-                <nav className="nav-wrapper">
+            <nav>
+                <div className="nav-wrapper">
                     <Link to="/" className="brand-logo left">
                         Home
                     </Link>
                     <ul className="right">
                         {this.renderButtons()}
                     </ul>
-                </nav>
-            </header>
+                </div>
+            </nav>
         );
     };
 };

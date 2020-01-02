@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Route } from 'react-router-dom';
 
+import NavBar from './components/NavBar';
+
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ArticlesPage from './pages/ArticlesPage';
@@ -13,6 +15,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="App">
+          <NavBar />
           <div id='page-body'>
             <Route exact path='/'>
               <HomePage />

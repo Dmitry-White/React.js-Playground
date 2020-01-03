@@ -26,7 +26,7 @@ class App extends Component {
             <Route exact path='/articles'>
               <ArticlesPage />
             </Route>
-            <Route exact path='/article/:name'>
+            <Route exact path='/articles/:name'>
               <ArticlePage />
             </Route>
           </div>

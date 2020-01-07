@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import NavBar from './components/NavBar';
 
@@ -18,21 +18,23 @@ class App extends Component {
         <div className="App">
           <NavBar />
           <div id='page-body'>
-            <Route exact path='/'>
-              <HomePage />
-            </Route>
-            <Route exact path='/about'>
-              <AboutPage />
-            </Route>
-            <Route exact path='/articles'>
-              <ArticlesPage />
-            </Route>
-            <Route exact path='/articles/:name'>
-              <ArticlePage />
-            </Route>
-            <Route>
-              <NotFoundPage />
-            </Route>
+            <Switch>
+              <Route exact path='/'>
+                <HomePage />
+              </Route>
+              <Route exact path='/about'>
+                <AboutPage />
+              </Route>
+              <Route exact path='/articles'>
+                <ArticlesPage />
+              </Route>
+              <Route exact path='/articles/:name'>
+                <ArticlePage />
+              </Route>
+              <Route>
+                <NotFoundPage />
+              </Route>
+            </Switch>
           </div>
         </div>
       </BrowserRouter >

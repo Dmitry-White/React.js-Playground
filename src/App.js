@@ -7,6 +7,7 @@ import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ArticlesPage from './pages/ArticlesPage';
 import ArticlePage from './pages/ArticlePage';
+import NotFoundPage from './pages/NotFoundPage';
 
 import './App.css';
 
@@ -28,6 +29,9 @@ class App extends Component {
             </Route>
             <Route exact path='/articles/:name'>
               <ArticlePage />
+            </Route>
+            <Route>
+              <NotFoundPage />
             </Route>
           </div>
         </div>

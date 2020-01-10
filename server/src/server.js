@@ -19,4 +19,16 @@ app.post('/api/articles/:name/upvote', (req, res) => {
   res.status(200).send(`${articleName} now has ${article.upvotes} upvotes!`);
 });
 
+app.post('/api/articles/:name/comment', (req, res) => {
+  const articleName = req.params.name;
+
+  const article = articlesInfo[articleName];
+
+  const { username, text } = req.body;
+
+  article.comments.push({ username, text });
+
+  res.status(200).send(article);
+});
+
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));

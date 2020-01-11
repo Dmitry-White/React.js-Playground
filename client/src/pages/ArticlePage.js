@@ -10,6 +10,12 @@ const defaultState = {
   upvotes: 0,
 };
 
+const fetchData = async (url, stateHandler) => {
+  const result = await fetch(url);
+  const data = await result.json();
+  stateHandler(data);
+}
+
 const ArticlePage = () => {
   const { name } = useParams();
 
@@ -18,9 +24,9 @@ const ArticlePage = () => {
 
   const [articleInfo, setArticleInfo] = useState(defaultState);
   useEffect(() => {
-    setArticleInfo({
-      upvotes: Math.ceil(Math.random() * 10)
-    });
+    fetchData(`/api/articles/${name}`, ({ upvotes }) => setArticleInfo({
+      upvotes
+    }));
   }, [name]);
 
   if (!article) return <NotFoundPage />

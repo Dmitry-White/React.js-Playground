@@ -1,14 +1,14 @@
 module.exports = {
   'learn-react': {
-    upvotes: 0,
+    upvotes: 1,
     comments: [],
   },
   'learn-node': {
-    upvotes: 0,
+    upvotes: 2,
     comments: [],
   },
   'my-thoughts-on-resumes': {
-    upvotes: 0,
+    upvotes: 3,
     comments: [],
   }
 }

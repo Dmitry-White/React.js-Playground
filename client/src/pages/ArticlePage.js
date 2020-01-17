@@ -5,9 +5,11 @@ import ArticlesList from '../components/ArticlesList';
 
 import articles from '../content/articles';
 import NotFoundPage from './NotFoundPage';
+import CommentsList from '../components/CommentsList';
 
 const defaultState = {
   upvotes: 0,
+  comments: []
 };
 
 const fetchData = async (url, stateHandler) => {
@@ -24,8 +26,9 @@ const ArticlePage = () => {
 
   const [articleInfo, setArticleInfo] = useState(defaultState);
   useEffect(() => {
-    fetchData(`/api/articles/${name}`, ({ upvotes }) => setArticleInfo({
-      upvotes
+    fetchData(`/api/articles/${name}`, ({ upvotes, comments }) => setArticleInfo({
+      upvotes,
+      comments
     }));
   }, [name]);
 
@@ -40,7 +43,7 @@ const ArticlePage = () => {
       <h1>{article.title}</h1>
       {getUpvotes()}
       {getContent(article.content)}
-      <h3>Related articles: </h3>
+      <CommentsList comments={articleInfo.comments} />
       <ArticlesList articles={relatedArticles} />
     </>
   )

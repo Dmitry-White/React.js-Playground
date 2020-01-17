@@ -13,6 +13,7 @@ const ArticlesList = ({ articles }) => {
 
   return (
     <>
+      <h3>Related articles: </h3>
       {getArticles(articles)}
     </>
   )

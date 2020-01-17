@@ -6,14 +6,15 @@ import ArticlesList from '../components/ArticlesList';
 import articles from '../content/articles';
 import NotFoundPage from './NotFoundPage';
 import CommentsList from '../components/CommentsList';
+import UpvotesSections from '../components/UpvotesSections';
 
 const defaultState = {
   upvotes: 0,
   comments: []
 };
 
-const fetchData = async (url, stateHandler) => {
-  const result = await fetch(url);
+const fetchData = async (url, stateHandler, config = {}) => {
+  const result = await fetch(url, config);
   const data = await result.json();
   stateHandler(data);
 }
@@ -34,14 +35,18 @@ const ArticlePage = () => {
 
   if (!article) return <NotFoundPage />
 
-  const getUpvotes = () => <p>This article has been upvoted {articleInfo.upvotes} times.</p>;
   const getParagraph = (paragraph, key) => <p key={key}>{paragraph}</p>;
   const getContent = (content) => content.map(getParagraph);
 
   return (
     <>
       <h1>{article.title}</h1>
-      {getUpvotes()}
+      <UpvotesSections
+        name={name}
+        upvotes={articleInfo.upvotes}
+        fetchData={fetchData}
+        stateHandler={setArticleInfo}
+      />
       {getContent(article.content)}
       <CommentsList comments={articleInfo.comments} />
       <ArticlesList articles={relatedArticles} />

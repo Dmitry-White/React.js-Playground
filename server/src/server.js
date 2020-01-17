@@ -24,7 +24,7 @@ app.post('/api/articles/:name/upvote', (req, res) => {
 
   article.upvotes += 1;
 
-  res.status(200).send(`${articleName} now has ${article.upvotes} upvotes!`);
+  res.status(200).send(article);
 });
 
 app.post('/api/articles/:name/comment', (req, res) => {

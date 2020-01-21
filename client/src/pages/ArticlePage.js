@@ -7,6 +7,7 @@ import articles from '../content/articles';
 import NotFoundPage from './NotFoundPage';
 import CommentsList from '../components/CommentsList';
 import UpvotesSections from '../components/UpvotesSections';
+import CommentForm from '../components/CommentForm';
 
 const defaultState = {
   upvotes: 0,
@@ -48,6 +49,7 @@ const ArticlePage = () => {
         stateHandler={setArticleInfo}
       />
       {getContent(article.content)}
+      <CommentForm name={name} fetchData={fetchData} />
       <CommentsList comments={articleInfo.comments} />
       <ArticlesList articles={relatedArticles} />
     </>

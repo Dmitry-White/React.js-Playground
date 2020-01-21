@@ -49,7 +49,7 @@ const ArticlePage = () => {
         stateHandler={setArticleInfo}
       />
       {getContent(article.content)}
-      <CommentForm name={name} fetchData={fetchData} />
+      <CommentForm name={name} fetchData={fetchData} stateHandler={setArticleInfo} />
       <CommentsList comments={articleInfo.comments} />
       <ArticlesList articles={relatedArticles} />
     </>

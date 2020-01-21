@@ -1,16 +1,20 @@
 import React, { useState } from 'react'
 
-const CommentForm = ({ name, fetchData }) => {
+const CommentForm = ({ name, fetchData, stateHandler }) => {
   const [username, setUsername] = useState('');
   const [comment, setComment] = useState('');
 
-  const clickHandler = () => fetchData(`/api/articles/${name}/comment`, () => { }, {
-    method: 'post',
-    body: JSON.stringify({ username, text: comment }),
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  });
+  const clickHandler = () => {
+    fetchData(`/api/articles/${name}/comment`, stateHandler, {
+      method: 'post',
+      body: JSON.stringify({ username, text: comment }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    setUsername('');
+    setComment('');
+  };
 
   return (
     <div id="add-comment-form">

@@ -1,24 +1,21 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom';
 
-import ArticlesList from '../components/ArticlesList';
-
 import articles from '../content/articles';
-import NotFoundPage from './NotFoundPage';
+
+import ArticlesList from '../components/ArticlesList';
 import CommentsList from '../components/CommentsList';
 import UpvotesSections from '../components/UpvotesSections';
 import CommentForm from '../components/CommentForm';
+
+import fetchData from '../utils/fetchData';
+
+import NotFoundPage from './NotFoundPage';
 
 const defaultState = {
   upvotes: 0,
   comments: []
 };
-
-const fetchData = async (url, stateHandler, config = {}) => {
-  const result = await fetch(url, config);
-  const data = await result.json();
-  stateHandler(data);
-}
 
 const ArticlePage = () => {
   const { name } = useParams();

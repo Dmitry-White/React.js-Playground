@@ -9,6 +9,14 @@ const app = express();
 
 app.use(bodyParser.json());
 
+app.get('/api/articles/:name', (req, res) => {
+  const articleName = req.params.name;
+
+  const article = articlesInfo[articleName];
+
+  res.status(200).json(article);
+});
+
 app.post('/api/articles/:name/upvote', (req, res) => {
   const articleName = req.params.name;
 

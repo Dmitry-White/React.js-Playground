@@ -1,1 +1,1 @@
-# Redux EggHeads
+# Fundamentals of Redux Course from Dan Abramov

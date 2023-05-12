@@ -1,2 +1,1 @@
-# AuthApp-GraphQL
-Auth-included project from a GraphQL course
+# GraphQL with React: The Complete Developers Guide
